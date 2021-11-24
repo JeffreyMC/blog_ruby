@@ -19,9 +19,11 @@ class ArticlesController < ApplicationController
         @article = Article.new(title: params[:article][:title], body: params[:article][:body])
 
         #guarda base de datos
-        @article.save
-
-        redirect_to @article
+        if @article.save
+            redirect_to @article
+        else
+            render :new
+        end
     end
 
     #PUT /articles/:id

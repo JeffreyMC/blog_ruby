@@ -2,8 +2,12 @@
 
     <h1>¡Bienvenido a Rails!</h1>
 
-    <% (0..10).each do |num|%>
-    <p>Número: <%=num%></p>
-    <%end%>
+    <div class="form col-md-2 mx-auto">
+        <label for="nombre" class="form-control">Nombre</label>
+        <input type="text" name="nombre" class="form-control">
+        <label for="pass" class="form-control">Contraseña</label>
+        <input type="text" name="pass" class="form-control">
+        <button type="submit" class="form-control btn btn-success">Enviar</button>
+    </div>
 
 </div>

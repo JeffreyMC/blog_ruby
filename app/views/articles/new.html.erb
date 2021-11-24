@@ -1,0 +1,19 @@
+<%= form_for @article do |f| %>
+    <div class="form col-md-4 text-center mt-5 mx-auto">
+        <h1>Crear artículo</h1>
+        <div class="mt-1">
+            <%= f.text_field :title, placeholder: "Título", class: "form-control"%>
+        </div>
+
+        <div class="mt-2">
+            <%= f.text_area :body, placeholder: "Tu artículo aquí", class:"form-control"%>
+        </div>
+
+        <div class="mt-2">
+            <%= f.submit "Guardar", disable_with: 'Guardando...', class:"form-control btn btn-success"%>
+        </div>
+    
+    </div>
+
+    
+<% end %>

@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 
     #POST /articles
     def create
-        @article = Article.new(title: params[:article][:title], body: params[:article][:body])
+        @article = Article.new(article_params)
 
         #guarda base de datos
         if @article.save
@@ -28,6 +28,18 @@ class ArticlesController < ApplicationController
 
     #PUT /articles/:id
     def update
+    end
+
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        redirect_to articles_path
+    end
+
+    private
+    #Strong params
+    def article_params
+        params.require(:article.permit(:title, :body))
     end
 
 end

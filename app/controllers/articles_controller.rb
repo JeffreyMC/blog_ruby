@@ -26,9 +26,21 @@ class ArticlesController < ApplicationController
         end
     end
 
+    # /articles/:id
+    def edit
+        @article = Article.find(params[:id])
+    end
+
     #PUT /articles/:id
     def update
+        @article = Article.find(params[:id])
+        if @article.update(article_params)
+            redirect_to articles_path
+        else
+            render :edit
+        end
     end
+
 
     def destroy
         @article = Article.find(params[:id])

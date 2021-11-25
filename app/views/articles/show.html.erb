@@ -1,5 +1,9 @@
-<h1><%= @article.title %></h1>
-
-<div>
+<div class="form col-md-4 text-center mt-5 mx-auto">
+  <h1><%= @article.title %></h1>
+  <div>
     <p><%= @article.body %></p>
+  </div>
+  <div>
+    <%= link_to "Editar", edit_article_path(@article), :class => "btn btn-success" %>
+  </div>
 </div>

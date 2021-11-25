@@ -1,28 +1,29 @@
-
-    <div class="container mt-5">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Título</th>
-                    <th scope="col">Contenido</th>
-                    <th scope="col">Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @articles.each do |article| %>
-                    <tr>
-                        <td>
-                            <%= article.title %>
-                        </td>
-                        <td>
-                            <%= article.body %>
-                        </td>
-                        <td>
-                            <%= link_to "Eliminar" , article, method: :delete %>
-                        </td>
-                    </tr>
-                    <%end%>
-            </tbody>
-        </table>
-
-    </div>
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Título</th>
+        <th scope="col">Contenido</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td>
+            <%= article.title %>
+          </td>
+          <td>
+            <%= article.body %>
+          </td>
+          <td>
+            <%= link_to "Mostrar" , article %>
+          </td>
+          <td>
+            <%= link_to "Eliminar" , article, method: :delete, :class => "peligro" %>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

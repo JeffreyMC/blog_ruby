@@ -1,13 +1,5 @@
-<div class="container mt-5 text-center">
-
-    <h1>¡Bienvenido a Rails!</h1>
-
-    <div class="form col-md-2 mx-auto">
-        <label for="nombre" class="form-control">Nombre</label>
-        <input type="text" name="nombre" class="form-control">
-        <label for="pass" class="form-control">Contraseña</label>
-        <input type="text" name="pass" class="form-control">
-        <button type="submit" class="form-control btn btn-success">Enviar</button>
-    </div>
-
-</div>
+<% if user_signed_in?%>
+  <div class =" col-md-10 mt-5 mx-auto">
+    <h1>Bienvenido <%= current_user.email %></div>
+  </div>
+<%end%>

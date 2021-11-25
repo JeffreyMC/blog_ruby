@@ -1,5 +1,10 @@
-<div class="form col-md-4 text-center mt-5 mx-auto">
+<div class="form col-md-8 text-center mt-5 mx-auto">
   <h1><%= @article.title %></h1>
+  <div>
+    <% unless @article.user.nil? %>
+      <p>Escrito por: <%= @article.user.email%></p>
+    <%end%>
+  </div>
   <div>
     <p><%= @article.body %></p>
   </div>

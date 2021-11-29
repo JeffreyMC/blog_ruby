@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     #callbacks
-    before_action :authenticate_user!, except: [:show]
+    before_action :authenticate_user!
     before_action :set_article, except: [:index, :new, :create]
     
     #GET /articles

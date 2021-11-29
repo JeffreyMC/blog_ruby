@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
     belongs_to :user
+    has_many :comments
     #valida que el los campos no estén vacíos
     validates_presence_of :title, message: "El título es obligatorio"
     validates_uniqueness_of :title, message: "El título ya está registrado"

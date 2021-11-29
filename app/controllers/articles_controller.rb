@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
     #GET /articles/show:id
     def show
         @article.update_visits
+        @comment = Comment.new
     end
 
     #GET /articles/new

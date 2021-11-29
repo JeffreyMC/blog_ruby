@@ -10,6 +10,19 @@
     <p><%= @article.body %></p>
   </div>
   <div>
+    <h3>Comentarios</h3>
+    <%= render 'comments/form'%>
+  </div>
+  <div>
+    <ul>
+      <%@article.comments.each do |comment|%>
+        <li>
+          <%= comment.body%> - <%= comment.user.email%>
+        </li>
+      <%end%>
+    </ul>
+  </div>
+  <div>
     <%= link_to "Editar", edit_article_path(@article), :class => "btn btn-success" %>
   </div>
 </div>
